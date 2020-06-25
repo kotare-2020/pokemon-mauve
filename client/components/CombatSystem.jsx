@@ -5,7 +5,7 @@ class CombatSystem extends React.Component {
   state = {
     userHP : 100,
     aiHP : 100,
-    isItUsersTurn : true
+    isUserTurn : true,
   }
   componentDidMount = () => {
     console.log('did mount')
@@ -29,18 +29,23 @@ class CombatSystem extends React.Component {
     this.subtractHP(this.generateAttack(), this.generateAttack())
   }
 
-
+  checkConsciousness = (userHP, aiHP) => {
+    if ( userHP <= 0 || aiHP <= 0 ){
+      return <button>They're unconscious!</button>
+    }
+  }
 
   render(){
     const userHP = this.state.userHP
     const aiHP = this.state.aiHP
+    const isUserTurn = this.state.isUserTurn
     let button
 
-    console.log('render', 'aiHP', aiHP, 'userHP', userHP)
+    console.log('render', 'aiHP', aiHP, 'userHP', userHP, 'isUsersTurn', isUserTurn)
 
-    if ( userHP <= 0 || aiHP <= 0){
-      button = <button>nice</button>
-    } else {
+    button = this.checkConsciousness(userHP, aiHP)
+
+    if ( isUserTurn == true && userHP > 0 && aiHP > 0 ){
       button = <button onClick={this.handleClick}>Attack!</button>
     }
 
@@ -65,7 +70,13 @@ export default CombatSystem
   // ai will attack after user has attacked
   // AND after a short delay
 
+// If someone is 'unconscious', change button to win or lose state:
+
+// write pseudocode
+
+
 // Is it users turn?
+
 // check true or false
 // if true, user can press attack
 // else ai will attack after short delay
