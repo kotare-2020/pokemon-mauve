@@ -2,7 +2,6 @@ const express = require('express')
 const router = express.Router()
 
 const db = require('../db/db')
-const { getUsers } = require('../db/db')
 
 // On form send - check database if that user exists   - getUser, if undefined - addUser
 router.post('/', (req, res) => {
@@ -17,10 +16,6 @@ router.post('/', (req, res) => {
         })
 })
 
-router.get('/add', (req, res) => {
-    const name = "dsafd"
-    db.addUser(name)
-})
 
 router.post('/result', (req, res) => {
     const result = req.body
