@@ -1,5 +1,6 @@
 import React from 'react'
 import Form from './Form'
+import Arena from './Arena'
 
 class App extends React.Component {
 
@@ -21,6 +22,7 @@ componentDidUpdate() {
       <>
       <h1>Pokemon</h1>
       <Form setName={this.setName}/>
+      <Arena/>
       </>
     )
   }
