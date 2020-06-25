@@ -7,9 +7,24 @@ class CombatSystem extends React.Component {
     aiHP : 100
   }
 
+  GenerateAttacks = () => {
+
+  }
+
+  subtractHP = (aiAttack, userAttack) => {
+    this.setState({
+      userHP: this.state.userHP -= 10,
+      aiHP: this.state.aiHP -= 5
+    })
+  }
+
+  handleClick = () => {
+    this.subtractHP()
+  }
+
   render(){
     return(
-      <button>yo</button>
+      <button onClick={this.handleClick}>yo</button>
     )
   }
 }
