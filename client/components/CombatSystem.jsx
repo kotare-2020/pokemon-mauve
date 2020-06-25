@@ -6,7 +6,9 @@ class CombatSystem extends React.Component {
     userHP : 100,
     aiHP : 100
   }
-
+  componentDidMount = () => {
+    console.log('did mount')
+  }
   getRandomInt = (min, max) => {
     return Math.floor(Math.random() * (max - min + 1) + min)
   }
@@ -26,9 +28,25 @@ class CombatSystem extends React.Component {
     this.subtractHP(this.generateAttack(), this.generateAttack())
   }
 
+
+
   render(){
+    const userHP = this.state.userHP
+    const aiHP = this.state.aiHP
+    let button
+
+    console.log('render', 'aiHP', aiHP, 'userHP', userHP)
+
+    if ( userHP <= 0 || aiHP <= 0){
+      button = <button>nice</button>
+    } else {
+      button = <button onClick={this.handleClick}>Attack!</button>
+    }
+
     return(
-      <button onClick={this.handleClick}>yo</button>
+      <>
+      {button}
+      </>
     )
   }
 }
@@ -45,11 +63,16 @@ export default CombatSystem
 
 // once ai or player reaches less than zero health, win sequence/screen should be loaded (stretch)
   // whoever reaches 0 first will disapear
-  // button will disapear so user can't kill themselves?
-  // have if statement check whetehr user AND ai are alive so they can't click the button otherwise
-    // have button disapear after click so user can't spam?
-  // will button clicks stack?
-    // test by removing button upon either pokemon's hp going below or equal to 0. if they both go because of stacked click events, then I'll need to fix that somehow.
+  //o button will disapear. User can still kill their self
+  //o have if statement check whetehr user AND ai are alive so they can't click the button otherwise
+    //o have button disapear after click so user can't spam?
+  //o will button clicks stack? Browser/React seem very quick so this might not be an issue afaik.
+    //o test by removing button upon either pokemon's hp going below or equal to 0. if they both go because of stacked click events, then I'll need to fix that somehow.
+  // The problem now is that they will both die.
+    // Can this be fixed by damage numbers being lowered?
+// Make combat turned based like the real thing.
+  // ai will attack after user has attacked
+  // AND after a short delay
 
 
 // combat animations stretch:
