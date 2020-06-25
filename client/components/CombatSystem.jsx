@@ -55,21 +55,11 @@ export default CombatSystem
 
 // basic combat system component:
 
-//o ai and player will have state hp of 100 on mount
-//o attack button
-//o on button click, a player attack number and ai attack number between between 10 and 20 will be randomly generated.
-//o these numbers will be set in state
-//o health will have the attack values generated subtracted.
-
 // once ai or player reaches less than zero health, win sequence/screen should be loaded (stretch)
-  // whoever reaches 0 first will disapear
-  //o button will disapear. User can still kill their self
-  //o have if statement check whetehr user AND ai are alive so they can't click the button otherwise
-    //o have button disapear after click so user can't spam?
-  //o will button clicks stack? Browser/React seem very quick so this might not be an issue afaik.
-    //o test by removing button upon either pokemon's hp going below or equal to 0. if they both go because of stacked click events, then I'll need to fix that somehow.
+
+// whoever reaches 0 first will disapear
   // The problem now is that they will both die.
-    // Can this be fixed by damage numbers being lowered?
+  // Can this be fixed by damage numbers being lowered?
 // Make combat turned based like the real thing.
   // ai will attack after user has attacked
   // AND after a short delay
@@ -79,3 +69,18 @@ export default CombatSystem
 
 // in combat system component:
 // onclick, a function that was imported from App will be run so that a css animation will play in arena component.
+
+
+// Completed stuff
+
+//o ai and player will have state hp of 100 on mount
+//o attack button
+//o on button click, a player attack number and ai attack number between between 10 and 20 will be randomly generated.
+//o these numbers will be set in state
+//o health will have the attack values generated subtracted.
+
+//o button will disapear. User can still kill their self
+//o have if statement check whetehr user AND ai are alive so they can't click the button otherwise
+  //o have button disapear after click so user can't spam?
+//o will button clicks stack? Browser/React seem very quick so this might not be an issue afaik.
+  //o test by removing button upon either pokemon's hp going below or equal to 0. if they both go because of stacked click events, then I'll need to fix that somehow.
