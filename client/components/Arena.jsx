@@ -66,15 +66,17 @@ class Arena extends React.Component {
     return (
       <>
       <div>
-        <h1>This is the arena for fighting pokemon</h1>
-        <div className='userPokemon'>
-          <img className='userPokemonSprite' src={this.state.userSprite} alt="userSprite"/>
-          <p>{this.state.userPokemonName}</p>
-        </div>
-        <div classname='aiPokemon'>
-          <img className='aiPokemonSprite' src={this.state.aiSprite} alt="aiSprite"/>
-          <p>{this.state.aiPokemonName}</p>
-        </div>
+        <h1>Arena</h1>
+        <div className='fightArena'>
+            <div className='aiPokemon'>
+              <p>{this.state.aiPokemonName}</p>
+              <img className='aiPokemonSprite' src={this.state.aiSprite} alt="aiSprite"/>
+            </div>
+            <div className='userPokemon'>
+              <img className='userPokemonSprite' src={this.state.userSprite} alt="userSprite"/>
+              <p>{this.state.userPokemonName}</p>
+            </div>
+          </div>
       </div>
       </>
     )

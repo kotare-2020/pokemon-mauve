@@ -23,24 +23,47 @@
     src: url('font/PokemonGb-RAeo.ttf') 
 }
 
-.userPokemon {
+.fightArena {
     padding: 25pt;
+    border-style: double;
+    flex-direction: column;
+    /* width: 600px;
+    height: 600px; */
+}
+
+.userPokemon {
+    order: 2;
+    padding: 25pt;
+    align-items: left;
+    justify-content: flex-start;
 }
 
 .userPokemonSprite {
-    width: 200px;
-    height: 200px;
+    width: 300px;
+    height: 300px;
+    align-items: left;
+    justify-content: flex-start;
 }
 
 .aiPokemon {
+    order: 1;
     padding: 25pt;
+    align-items: right;
+    justify-content: flex-end;
+    text-align: right;
 }
 
 .aiPokemonSprite {
-    width: 200px;
-    height: 200px;
+    width: 300px;
+    height: 300px;
+    align-items: right;
+    justify-content: flex-end;
 }
 
 p {
     font-family: 'PokemonGb-RAeo';  
+}
+
+h1 {
+    font-family: 'PokemonGb-RAeo'; 
 }
