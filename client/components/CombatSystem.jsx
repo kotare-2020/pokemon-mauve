@@ -29,8 +29,17 @@ class CombatSystem extends React.Component {
     this.subtractHP(this.generateAttack(), this.generateAttack())
   }
 
-  checkConsciousness = (userHP, aiHP) => {
+  isUnconscious = (userHP, aiHP) => {
     if ( userHP <= 0 || aiHP <= 0 ){
+      return true
+    }
+    return false
+  }
+
+  setButton = (isUserTurn, userHP, aiHP) => {
+    if ( isUserTurn == true && this.isUnconscious(userHP, aiHP) == false ){
+      return <button onClick={this.handleClick}>Attack!</button>
+    } else if ( this.isUnconscious(userHP, aiHP) ) {
       return <button>They're unconscious!</button>
     }
   }
@@ -43,11 +52,7 @@ class CombatSystem extends React.Component {
 
     console.log('render', 'aiHP', aiHP, 'userHP', userHP, 'isUsersTurn', isUserTurn)
 
-    button = this.checkConsciousness(userHP, aiHP)
-
-    if ( isUserTurn == true && userHP > 0 && aiHP > 0 ){
-      button = <button onClick={this.handleClick}>Attack!</button>
-    }
+    button = this.setButton(isUserTurn, userHP, aiHP)
 
     return(
       <>
