@@ -35,10 +35,11 @@ class App extends React.Component {
   render() {
     return (
       <Router>
-        <Route path="/" component={ResultsButton} />
-        <Route path="/" component={HomeButton} />
+        {/* <Route path="/" component={ResultsButton} /> */}
+        {/* <Route path="/" component={HomeButton} /> */}
+       
         <Route exact path="/" component={() => <Form setName={this.setName} />} />
-        <Route exact path="/arena" component={Arena} />
+        <Route exact path="/arena" component={() => <Arena pokemonName={this.state.pokemonName} aiPokemon={this.state.aiPokemon} /> } />
         <Route exact path="/arena" component={CombatSystem} />
         <Route exact path="/results" component={Results} />
       </Router>

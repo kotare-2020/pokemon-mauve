@@ -1,12 +1,13 @@
 import React from 'react'
 import HomeButton from "./HomeButton"
+import { HashRouter as Router, Route } from 'react-router-dom'
 
 const Results = () => {
   return (
-    <>
-    <HomeButton />
-    <h1>This is the results (stretch)</h1>
-    </>
+    <Router>
+      <HomeButton />
+      <h1>This is the results (stretch)</h1>
+    </Router>
   )
 }
 
