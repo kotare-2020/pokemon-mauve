@@ -7,3 +7,19 @@ const Results = () => {
 }
 
 export default Results
+
+
+
+// User wins or loses
+// Results are saved in the database
+
+// if win:
+// {name:{nameFromForm}, win:{+1}, loss:{}}
+
+// if loss:
+// {name:{nameFromForm}, win:{}, loss:{+1}}
+
+
+
+// Or save the battle to the db
+// {battleId:1, name:{nameFromForm}, myPokemonName:{}, gymleaderPokemonName:{}, win/loss:{}}
