@@ -7,19 +7,23 @@ class CombatSystem extends React.Component {
     aiHP : 100
   }
 
-  GenerateAttacks = () => {
-
+  getRandomInt = (min, max) => {
+    return Math.floor(Math.random() * (max - min + 1) + min)
   }
 
-  subtractHP = (aiAttack, userAttack) => {
+  generateAttack = () => {
+    return this.getRandomInt(10, 20)
+  }
+
+  subtractHP = (userAttack, aiAttack) => {
     this.setState({
-      userHP: this.state.userHP -= 10,
-      aiHP: this.state.aiHP -= 5
+      userHP: this.state.userHP -= aiAttack,
+      aiHP: this.state.aiHP -= userAttack
     })
   }
 
   handleClick = () => {
-    this.subtractHP()
+    this.subtractHP(this.generateAttack(), this.generateAttack())
   }
 
   render(){
