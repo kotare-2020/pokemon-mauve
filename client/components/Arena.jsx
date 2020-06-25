@@ -1,6 +1,8 @@
 import React from 'react'
 import request from 'superagent'
+import ResultButton from "./ResultsButton"
 // import HomeButton from "./HomeButton"
+import { HashRouter as Router, Route } from 'react-router-dom'
 
 
 class Arena extends React.Component {
@@ -64,7 +66,7 @@ class Arena extends React.Component {
 
   render() {
     return (
-      <>
+      <Router>
       <div>
         <h1>This is the arena for fighting pokemon</h1>
         <div className='userPokemon'>
@@ -76,7 +78,7 @@ class Arena extends React.Component {
           <p>{this.state.aiPokemonName}</p>
         </div>
       </div>
-      </>
+      </Router>
     )
   }
 }
