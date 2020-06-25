@@ -3,7 +3,9 @@ const router = express.Router()
 
 const db = require('../db/db')
 
-// On form send - check database if that user exists   - getUser, if undefined - addUser
+// On form send - Object like this is posted {"name": "Rose"}
+// Check database if that user exists - getUser, if undefined - addUser
+
 router.post('/', (req, res) => {
     const name = req.body.name
 
@@ -16,7 +18,11 @@ router.post('/', (req, res) => {
         })
 })
 
-
+// On game end - this data is posted:
+// {
+//     "name": "Rose",
+//     "won": false
+// }
 router.post('/result', (req, res) => {
     const result = req.body
     console.log(req.body)

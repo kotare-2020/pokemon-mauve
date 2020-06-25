@@ -22,12 +22,7 @@ function saveOutcome(result, db = connection) {
 }
 
 function getUserAndSaveOutcome(result, db = connection) {
-    // console.log('result')
-    // Result looks like this:
-    // {
-    //     "name": "Rose",
-    //     "won": false
-    //   }
+
     return db('users').where({name:result.name}).first().then(user => {
         if(result.won == true){
             return db('users').update({wins:++user.wins}).where({name:user.name})
@@ -51,7 +46,6 @@ module.exports = {
 // if user doesnt exist, insert it      
 
 // keep name in state
-
 
 
 // After battle, update db with that users result  // if win:
