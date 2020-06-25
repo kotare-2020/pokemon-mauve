@@ -70,7 +70,7 @@ class CombatSystem extends React.Component {
     const buttons = {
       attack: <button className='button' onClick={this.handleClick}>Attack!</button>,
       unconscious: <button className='button'>They're unconscious!</button>,
-      aiAttack: <button classname='button'>They're attacking!</button>,
+      aiAttack: <button className='button'>They're attacking!</button>,
     }
     let button
 
