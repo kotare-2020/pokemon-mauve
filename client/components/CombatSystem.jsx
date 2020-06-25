@@ -36,11 +36,11 @@ class CombatSystem extends React.Component {
     return false
   }
 
-  setButton = (isUserTurn, userHP, aiHP) => {
+  setButton = (buttons, isUserTurn, userHP, aiHP) => {
     if ( isUserTurn == true && this.isUnconscious(userHP, aiHP) == false ){
-      return <button onClick={this.handleClick}>Attack!</button>
+      return buttons.attack
     } else if ( this.isUnconscious(userHP, aiHP) ) {
-      return <button>They're unconscious!</button>
+      return buttons.unconscious
     }
   }
 
@@ -48,11 +48,15 @@ class CombatSystem extends React.Component {
     const userHP = this.state.userHP
     const aiHP = this.state.aiHP
     const isUserTurn = this.state.isUserTurn
+    const buttons = {
+      attack: <button onClick={this.handleClick}>Attack!</button>,
+      unconscious: <button>They're unconscious!</button>,
+    }
     let button
 
     console.log('render', 'aiHP', aiHP, 'userHP', userHP, 'isUsersTurn', isUserTurn)
 
-    button = this.setButton(isUserTurn, userHP, aiHP)
+    button = this.setButton(buttons, isUserTurn, userHP, aiHP)
 
     return(
       <>
