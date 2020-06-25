@@ -4,7 +4,8 @@ class CombatSystem extends React.Component {
 
   state = {
     userHP : 100,
-    aiHP : 100
+    aiHP : 100,
+    isItUsersTurn : true
   }
   componentDidMount = () => {
     console.log('did mount')
@@ -14,7 +15,7 @@ class CombatSystem extends React.Component {
   }
 
   generateAttack = () => {
-    return this.getRandomInt(10, 20)
+    return this.getRandomInt(1, 20)
   }
 
   subtractHP = (userAttack, aiAttack) => {
@@ -58,11 +59,16 @@ export default CombatSystem
 // once ai or player reaches less than zero health, win sequence/screen should be loaded (stretch)
 
 // whoever reaches 0 first will disapear
-  // The problem now is that they will both die.
+// The problem now is that they can both die.
   // Can this be fixed by damage numbers being lowered?
 // Make combat turned based like the real thing.
   // ai will attack after user has attacked
   // AND after a short delay
+
+// Is it users turn?
+// check true or false
+// if true, user can press attack
+// else ai will attack after short delay
 
 
 // combat animations stretch:
