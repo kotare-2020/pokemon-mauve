@@ -1,6 +1,7 @@
 import React from 'react'
 import Results from './Results'
 import StartBattle from "./StartBattle"
+import ResultButton from "./ResultsButton"
 import { HashRouter as Router, Route } from "react-router-dom";
 
 
@@ -36,6 +37,7 @@ handleChange = event => {
 render() {
   return (
     <Router>
+      <ResultButton/>
     <form onSubmit={this.handleSubmit}>
       <label>
         Trainer Name:
