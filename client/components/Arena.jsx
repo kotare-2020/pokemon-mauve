@@ -1,5 +1,6 @@
 import React from 'react'
 import request from 'superagent'
+// import HomeButton from "./HomeButton"
 
 
 class Arena extends React.Component {
