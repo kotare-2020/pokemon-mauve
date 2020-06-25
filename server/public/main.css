@@ -1,0 +1,24 @@
+.button {
+    padding: 25pt;
+    align-items: center;
+    background-color: white;
+    cursor:pointer;
+    font-family: 'PokemonGb-RAeo';
+}
+
+/* .button:hover {
+    padding: 25pt;
+    align-items: center;
+    background-color: white;
+} */
+
+.text-box {
+    border-style: double;
+    align-items: center;
+    padding: 25pt;
+}
+
+@font-face {
+    font-family: 'PokemonGb-RAeo';
+    src: url('font/PokemonGb-RAeo.ttf') 
+}
