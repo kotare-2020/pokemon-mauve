@@ -93,28 +93,10 @@ export default CombatSystem
 // basic combat system component:
 
 // once ai or player reaches less than zero health, win sequence/screen should be loaded (stretch)
-
 // whoever reaches 0 first will disapear
-// The problem now is that they can both die.
-  // Can this be fixed by damage numbers being lowered?
-// Make combat turned based like the real thing.
-  // ai will attack after user has attacked
-  // AND after a short delay
-
 // If someone is 'unconscious', change button to win or lose state:
 
 // write pseudocode
-
-
-// Is it users turn?
-
-//o check true or false
-//o if true, user can press attack
-//o user will press attack
-  //o remove ai attack from button.attack...and so on
-//o set userTurn to false and start timer
-//o **(Timer is stretch)**
-//o after timer, user can attack again (ai attack can be made later)
 
 
 // combat animations stretch:
@@ -123,7 +105,7 @@ export default CombatSystem
 // onclick, a function that was imported from App will be run so that a css animation will play in arena component.
 
 
-// Completed stuff
+// Completed stuff:
 
 //o ai and player will have state hp of 100 on mount
 //o attack button
@@ -133,6 +115,22 @@ export default CombatSystem
 
 //o button will disapear. User can still kill their self
 //o have if statement check whetehr user AND ai are alive so they can't click the button otherwise
-  //o have button disapear after click so user can't spam?
+//o have button disapear after click so user can't spam?
 //o will button clicks stack? Browser/React seem very quick so this might not be an issue afaik.
-  //o test by removing button upon either pokemon's hp going below or equal to 0. if they both go because of stacked click events, then I'll need to fix that somehow.
+//o test by removing button upon either pokemon's hp going below or equal to 0. if they both go because of stacked click events, then I'll need to fix that somehow.
+
+//o Fixed with turn based system: The problem now is that they can both die.
+//o Make combat turned based like the real thing.
+  //o ai will attack after user has attacked
+  //o AND after a short delay
+
+
+//o Is it users turn?
+
+//o check true or false
+//o if true, user can press attack
+//o user will press attack
+//o remove ai attack from button.attack...and so on
+//o set userTurn to false and start timer
+//o **(Timer is stretch)**
+//o after timer, user can attack again (ai attack can be made later)
