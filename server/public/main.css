@@ -22,3 +22,25 @@
     font-family: 'PokemonGb-RAeo';
     src: url('font/PokemonGb-RAeo.ttf') 
 }
+
+.userPokemon {
+    padding: 25pt;
+}
+
+.userPokemonSprite {
+    width: 200px;
+    height: 200px;
+}
+
+.aiPokemon {
+    padding: 25pt;
+}
+
+.aiPokemonSprite {
+    width: 200px;
+    height: 200px;
+}
+
+p {
+    font-family: 'PokemonGb-RAeo';  
+}
