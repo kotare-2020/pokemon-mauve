@@ -38,11 +38,18 @@ export default CombatSystem
 // basic combat system component:
 
 //o ai and player will have state hp of 100 on mount
-// attack button
-// on button click, a player attack number and ai attack number between between 10 and 20 will be randomly generated.
-// these numbers will be set in state
-// health will have the attack values generated subtracted.
-// once ai or player reaches less than zero health, win screen should be loaded (stretch)
+//o attack button
+//o on button click, a player attack number and ai attack number between between 10 and 20 will be randomly generated.
+//o these numbers will be set in state
+//o health will have the attack values generated subtracted.
+
+// once ai or player reaches less than zero health, win sequence/screen should be loaded (stretch)
+  // whoever reaches 0 first will disapear
+  // button will disapear so user can't kill themselves?
+  // have if statement check whetehr user AND ai are alive so they can't click the button otherwise
+    // have button disapear after click so user can't spam?
+  // will button clicks stack?
+    // test by removing button upon either pokemon's hp going below or equal to 0. if they both go because of stacked click events, then I'll need to fix that somehow.
 
 
 // combat animations stretch:
