@@ -24,19 +24,19 @@ class CombatSystem extends React.Component {
       aiHP: this.state.aiHP -= userAttackPoints,
       isUserTurn: false
     }, () => {
-      console.log('attacked: isUserTurn =', this.state.isUserTurn)
+      console.log('user attacked: isUserTurn =', this.state.isUserTurn)
       window.setTimeout(() => {this.aiAttack(aiAttackPoints)}, 1000)
     }
     )
   }
 
   aiAttack = (aiAttackPoints) => {
-    console.log('aiAttack start', this.state.isUserTurn)
+    console.log('aiAttack() start: isUserTurn =', this.state.isUserTurn)
     this.setState({
       userHP: this.state.userHP -= aiAttackPoints,
       isUserTurn: true
     }, () => {
-      console.log('aiAttack end', this.state.isUserTurn)
+      console.log('aiAttack() end: isUserTurn =', this.state.isUserTurn)
     })
   }
 
@@ -74,7 +74,8 @@ class CombatSystem extends React.Component {
     }
     let button
 
-    console.log('render', 'aiHP', aiHP, 'userHP', userHP, 'isUsersTurn', isUserTurn)
+    console.log('render')
+    console.log('aiHP', aiHP, 'userHP', userHP, 'isUsersTurn', isUserTurn)
 
     button = this.setButton(buttons, isUserTurn, userHP, aiHP)
 
