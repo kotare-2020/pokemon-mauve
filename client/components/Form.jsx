@@ -1,5 +1,7 @@
 import React from 'react'
 import Results from './Results'
+import StartBattle from "./StartBattle"
+import { HashRouter as Router, Route } from "react-router-dom";
 
 
 class Form extends React.Component {
@@ -33,7 +35,7 @@ handleChange = event => {
 
 render() {
   return (
-    // <Resutls/>
+    <Router>
     <form onSubmit={this.handleSubmit}>
       <label>
         Trainer Name:
@@ -45,8 +47,10 @@ render() {
         <input type="text" name="pokemonName" onChange={this.handleChange}/>
       </label>
 
-      <input type="submit" value="Save" />
+      <input type="submit" value="Select apponent" />
     </form>
+    <Route exact path="/" component={StartBattle} />
+    </Router>
   )
 }
 }
