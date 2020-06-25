@@ -18,10 +18,25 @@ class CombatSystem extends React.Component {
     return this.getRandomInt(1, 20)
   }
 
-  subtractHP = (userAttack, aiAttack) => {
+  subtractHP = (userAttackPoints, aiAttackPoints) => {
     this.setState({
-      userHP: this.state.userHP -= aiAttack,
-      aiHP: this.state.aiHP -= userAttack
+      // userHP: this.state.userHP -= aiAttackPoints,
+      aiHP: this.state.aiHP -= userAttackPoints,
+      isUserTurn: false
+    }, () => {
+      console.log('attacked: isUserTurn =', this.state.isUserTurn)
+      window.setTimeout(() => {this.aiAttack(aiAttackPoints)}, 1000)
+    }
+    )
+  }
+
+  aiAttack = (aiAttackPoints) => {
+    console.log('aiAttack start', this.state.isUserTurn)
+    this.setState({
+      userHP: this.state.userHP -= aiAttackPoints,
+      isUserTurn: true
+    }, () => {
+      console.log('aiAttack end', this.state.isUserTurn)
     })
   }
 
@@ -39,7 +54,11 @@ class CombatSystem extends React.Component {
   setButton = (buttons, isUserTurn, userHP, aiHP) => {
     if ( isUserTurn == true && this.isUnconscious(userHP, aiHP) == false ){
       return buttons.attack
-    } else if ( this.isUnconscious(userHP, aiHP) ) {
+    }
+    else if ( isUserTurn == false && this.isUnconscious(userHP, aiHP) == false ){
+      return buttons.aiAttack
+    }
+    else if ( this.isUnconscious(userHP, aiHP) ) {
       return buttons.unconscious
     }
   }
@@ -51,6 +70,7 @@ class CombatSystem extends React.Component {
     const buttons = {
       attack: <button onClick={this.handleClick}>Attack!</button>,
       unconscious: <button>They're unconscious!</button>,
+      aiAttack: <button>They're attacking!</button>,
     }
     let button
 
@@ -86,9 +106,13 @@ export default CombatSystem
 
 // Is it users turn?
 
-// check true or false
-// if true, user can press attack
-// else ai will attack after short delay
+//o check true or false
+//o if true, user can press attack
+//o user will press attack
+  //o remove ai attack from button.attack...and so on
+//o set userTurn to false and start timer
+//o **(Timer is stretch)**
+//o after timer, user can attack again (ai attack can be made later)
 
 
 // combat animations stretch:
