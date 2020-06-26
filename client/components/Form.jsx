@@ -1,7 +1,11 @@
 import React from 'react'
 import Results from './Results'
 import StartBattle from "./StartBattle"
+import ResultButton from "./ResultsButton"
 import { HashRouter as Router, Route } from "react-router-dom";
+import {savePerson} from '../api/index'
+import Sound from 'react-sound'
+
 
 
 class Form extends React.Component {
@@ -19,7 +23,7 @@ componentDidMount() {
 
 handleSubmit = event => {
   event.preventDefault()
-
+  savePerson(this.state.name)
   this.props.setName(this.state.name, this.state.pokemonName, this.state.aiPokemon)
 }
 
@@ -37,19 +41,35 @@ render() {
   return (
     <Router>
     <form onSubmit={this.handleSubmit}>
-      <label>
-        Trainer Name:
-        <input type="text" name="name" onChange={this.handleChange}/>
-      </label>
+    <div className="form">
+      <img class="oak" src="./images/Lets_Go_Pikachu_Eevee_Professor_Oak.png" alt=""/>
+      <div className="trainerForm">
+        <label>
+          Trainer Name:
+          <input type="text" className="trainerForm" name="name" onChange={this.handleChange}/>
+        </label>
+      </div>
 
-      <label>
-        Pokemon Name:
-        <input type="text" name="pokemonName" onChange={this.handleChange}/>
-      </label>
-
-      <input type="submit" value="Select apponent" />
-    </form>
+      <div className="pokemonForm">
+        <label>
+          Pokemon Name / Number:
+          <input type="text" className="pokemonForm" name="pokemonName" onChange={this.handleChange}/>
+        </label>
+      </div>
+      <input className="generateApponent" type="submit" value="Generate apponent" />
     <Route exact path="/" component={StartBattle} />
+    </div>
+
+    </form>
+    <ResultButton/>
+    <Sound
+                url="/audio/Pokemon BlueRed - Pallet Town.mp3"
+                playStatus={Sound.status.PLAYING}
+                // playFromPosition={300 /* in milliseconds */}
+                onLoading={this.handleSongLoading}
+                onPlaying={this.handleSongPlaying}
+                onFinishedPlaying={this.handleSongFinishedPlaying}
+            />
     </Router>
   )
 }

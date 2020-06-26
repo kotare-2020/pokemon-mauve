@@ -1,5 +1,48 @@
-.button {
+body {
+    font-family: 'PokemonGb-RAeo';  
+}
+
+
+.attackButton {
     padding: 25pt;
+    width: 75%;
+    align-items: center;
+    background-color: white;
+    cursor:pointer;
+    font-family: 'PokemonGb-RAeo';
+}
+
+.resultsButton {
+    padding: 25pt;
+    margin-top: 25pt;
+    align-items: center;
+    background-color: white;
+    cursor:pointer;
+    font-family: 'PokemonGb-RAeo';
+    width: 100%;
+}
+
+.homeButton {
+    padding: 25pt;
+    width: 25%;
+    align-items: center;
+    background-color: white;
+    cursor:pointer;
+    font-family: 'PokemonGb-RAeo';
+}
+
+.startBattle {
+    padding: 25pt;
+    margin: 25pt;
+    align-items: center;
+    background-color: white;
+    cursor:pointer;
+    font-family: 'PokemonGb-RAeo';
+}
+
+.generateApponent {
+    padding: 25pt;
+    margin: 25pt;
     align-items: center;
     background-color: white;
     cursor:pointer;
@@ -12,6 +55,27 @@
     background-color: white;
 } */
 
+.oak {
+    max-height: 300px;
+    padding-top: 25pt;
+}
+
+.form {
+    text-align: center;
+    border-style: double;
+}
+
+.trainerForm {
+    padding: 10pt;
+    margin: 20pt;
+    padding-right: 30pt;
+}
+
+.pokemonForm {
+    padding: 10pt;
+    margin: 20pt;
+}
+
 .text-box {
     border-style: double;
     align-items: center;
@@ -23,24 +87,58 @@
     src: url('font/PokemonGb-RAeo.ttf') 
 }
 
-.userPokemon {
+.fightArena {
     padding: 25pt;
+    border-style: double;
+    flex-direction: column;
+    /* width: 600px;
+    height: 600px; */
+}
+
+.userPokemon {
+    order: 2;
+    padding: 25pt;
+    margin-top: -200px;
+    align-items: left;
+    justify-content: flex-start;
 }
 
 .userPokemonSprite {
-    width: 200px;
-    height: 200px;
+    width: 300px;
+    height: 300px;
+    align-items: left;
+    justify-content: flex-start;
 }
 
 .aiPokemon {
+    order: 1;
     padding: 25pt;
+    align-items: right;
+    justify-content: flex-end;
+    text-align: right;
 }
 
 .aiPokemonSprite {
-    width: 200px;
-    height: 200px;
+    width: 300px;
+    height: 300px;
+    align-items: right;
+    justify-content: flex-end;
 }
 
 p {
     font-family: 'PokemonGb-RAeo';  
+}
+
+h1 {
+    font-family: 'PokemonGb-RAeo'; 
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+#app {
+    width: 800px;
+    margin: 0 auto;
 }
