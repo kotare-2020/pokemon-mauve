@@ -8,7 +8,7 @@ class CombatSystem extends React.Component {
     isUserTurn : true,
   }
   componentDidMount = () => {
-    console.log('did mount')
+    console.log('CombatSystem did mount')
   }
   getRandomInt = (min, max) => {
     return Math.floor(Math.random() * (max - min + 1) + min)
@@ -20,16 +20,19 @@ class CombatSystem extends React.Component {
 
   subtractHP = (userAttackPoints, aiAttackPoints) => {
     this.setState({
-      // userHP: this.state.userHP -= aiAttackPoints,
       aiHP: this.state.aiHP -= userAttackPoints,
       isUserTurn: false
     }, () => {
       console.log('attacked: isUserTurn =', this.state.isUserTurn)
+      this.props.getHitPoints(this.state.userHP, this.state.aiHP)
       window.setTimeout(() => {this.aiAttack(aiAttackPoints)}, 1000)
     }
     )
   }
-
+  //o have a thing in state that remembers whos turn it is and whether they have made their turn. (already done, to a degree)
+  //o run getHitPoints in or after handleclick
+  //o can run function twice:
+  
   aiAttack = (aiAttackPoints) => {
     console.log('aiAttack start', this.state.isUserTurn)
     this.setState({
@@ -37,6 +40,7 @@ class CombatSystem extends React.Component {
       isUserTurn: true
     }, () => {
       console.log('aiAttack end', this.state.isUserTurn)
+      this.props.getHitPoints(this.state.userHP, this.state.aiHP)
     })
   }
 

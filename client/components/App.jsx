@@ -1,7 +1,6 @@
 import React from "react";
 import Form from "./Form";
 import Arena from "./Arena";
-import CombatSystem from "./CombatSystem";
 import { HashRouter as Router, Route } from "react-router-dom";
 import Results from "./Results";
 import ResultsButton from "./ResultsButton"
@@ -27,10 +26,9 @@ class App extends React.Component {
     console.log(this.state);
   }
 
-  // get random enemy function:
-  // This should be done after form page, ya?
-  // For arena:
-  // get ai data: name, front-sprite,
+  // nice work team!
+  //o get random enemy function
+  //o get ai data: name, user and ai sprites
 
   render() {
     return (
@@ -40,7 +38,6 @@ class App extends React.Component {
         <h1>Pokemon</h1>
         <Route exact path="/" component={() => <Form setName={this.setName} />} />
         <Route exact path="/arena" component={Arena} />
-        <Route exact path="/arena" component={CombatSystem} />
         <Route exact path="/results" component={Results} />
       </Router>
     );
