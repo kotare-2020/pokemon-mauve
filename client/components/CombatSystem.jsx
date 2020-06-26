@@ -85,8 +85,8 @@ class CombatSystem extends React.Component {
       <Router>
       <div className='text-box'>
       {button}
-      <ResultButton/>
       <HomeButton/>
+      <ResultButton/>
       </div>
       </Router>
     )
