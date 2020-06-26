@@ -22,3 +22,11 @@ export function saveResult(name, result) {
             return res.body
         })
 }
+
+export function getUsers() {
+    return request.get('result')
+    .then(res => {
+        console.log("in api", res.body)
+        return res.body
+    })
+}
