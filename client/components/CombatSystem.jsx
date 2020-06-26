@@ -1,4 +1,7 @@
 import React from 'react'
+import ResultButton from "./ResultsButton"
+import HomeButton from "./HomeButton"
+import { HashRouter as Router, Route } from 'react-router-dom'
 
 class CombatSystem extends React.Component {
 
@@ -68,9 +71,9 @@ class CombatSystem extends React.Component {
     const aiHP = this.state.aiHP
     const isUserTurn = this.state.isUserTurn
     const buttons = {
-      attack: <button className='button' onClick={this.handleClick}>Attack!</button>,
-      unconscious: <button className='button'>They're unconscious!</button>,
-      aiAttack: <button className='button'>They're attacking!</button>,
+      attack: <button className='attackButton' onClick={this.handleClick}>Attack!</button>,
+      unconscious: <button className='attackButton'>They're unconscious!</button>,
+      aiAttack: <button className='attackButton'>They're attacking!</button>,
     }
     let button
 
@@ -79,11 +82,13 @@ class CombatSystem extends React.Component {
     button = this.setButton(buttons, isUserTurn, userHP, aiHP)
 
     return(
-      <>
+      <Router>
       <div className='text-box'>
       {button}
+      <ResultButton/>
+      <HomeButton/>
       </div>
-      </>
+      </Router>
     )
   }
 }
