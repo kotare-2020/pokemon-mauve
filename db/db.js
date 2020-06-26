@@ -3,6 +3,19 @@ const config = require('../knexfile')
 const env = process.env.NODE_ENV || 'development'
 const connection = knex(config[env])
 
+function getPeople(db = connection) {
+  return db('people').select()
+    .then(people => {
+      return people.map(person => {
+
+        person.favouriteColour = person.favourite_colour
+        delete person.favourite_colour
+
+        return person
+      })
+    })
+}
+
 function getUsers(db = connection) {
     return db('users').select()
 }
@@ -11,25 +24,16 @@ function getUser(user, db = connection) {
     return db('users').where({name:user}).first()
 }
 
+// function checkIfUserExists(user, db = connection) {
+//     return db('users').where({name:user}).first()
+// }
+
 function addUser(user, db = connection) {
-    return db('users').insert({name:user, wins:0, losses:0}).then(ids => {
-        console.log(ids[0])
-    })
+    return db('users').insert({name:user})
 }
 
 function saveOutcome(result, db = connection) {
     return db('users').update(result)
-}
-
-function getUserAndSaveOutcome(result, db = connection) {
-
-    return db('users').where({name:result.name}).first().then(user => {
-        if(result.won == true){
-            return db('users').update({wins:++user.wins}).where({name:user.name})
-        } else {
-            return db('users').update({losses:++user.losses}).where({name:user.name})
-        }
-    })
 }
 
 module.exports = {
@@ -37,7 +41,6 @@ module.exports = {
     getUser,
     addUser,
     saveOutcome,
-    getUserAndSaveOutcome
 }
 
 
@@ -46,6 +49,7 @@ module.exports = {
 // if user doesnt exist, insert it      
 
 // keep name in state
+
 
 
 // After battle, update db with that users result  // if win:

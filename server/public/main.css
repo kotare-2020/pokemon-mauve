@@ -1,33 +1,4 @@
-body {
-    font-family: 'PokemonGb-RAeo';  
-}
-
-
-.attackButton {
-    padding: 25pt;
-    align-items: center;
-    background-color: white;
-    cursor:pointer;
-    font-family: 'PokemonGb-RAeo';
-}
-
-.resultsButton {
-    padding: 25pt;
-    align-items: center;
-    background-color: white;
-    cursor:pointer;
-    font-family: 'PokemonGb-RAeo';
-}
-
-.homeButton {
-    padding: 25pt;
-    align-items: center;
-    background-color: white;
-    cursor:pointer;
-    font-family: 'PokemonGb-RAeo';
-}
-
-.startBattle {
+.button {
     padding: 25pt;
     align-items: center;
     background-color: white;
@@ -52,48 +23,24 @@ body {
     src: url('font/PokemonGb-RAeo.ttf') 
 }
 
-.fightArena {
-    padding: 25pt;
-    border-style: double;
-    flex-direction: column;
-    /* width: 600px;
-    height: 600px; */
-}
-
 .userPokemon {
-    order: 2;
     padding: 25pt;
-    margin-top: -200px;
-    align-items: left;
-    justify-content: flex-start;
 }
 
 .userPokemonSprite {
-    width: 300px;
-    height: 300px;
-    align-items: left;
-    justify-content: flex-start;
+    width: 200px;
+    height: 200px;
 }
 
 .aiPokemon {
-    order: 1;
     padding: 25pt;
-    align-items: right;
-    justify-content: flex-end;
-    text-align: right;
 }
 
 .aiPokemonSprite {
-    width: 300px;
-    height: 300px;
-    align-items: right;
-    justify-content: flex-end;
+    width: 200px;
+    height: 200px;
 }
 
 p {
     font-family: 'PokemonGb-RAeo';  
-}
-
-h1 {
-    font-family: 'PokemonGb-RAeo'; 
 }
