@@ -2,6 +2,8 @@ import React from 'react'
 import HomeButton from "./HomeButton"
 import { getUsers } from '../api/index'
 import { get } from 'superagent'
+import Sound from 'react-sound'
+
 
 class Results extends React.Component {
 
