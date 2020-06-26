@@ -66,7 +66,7 @@ class Arena extends React.Component {
 
   render() {
     return (
-      <Router>
+      <React.Fragment>
       <div>
         <h1>This is the arena for fighting pokemon</h1>
         <div className='userPokemon'>
@@ -78,7 +78,7 @@ class Arena extends React.Component {
           <p>{this.state.aiPokemonName}</p>
         </div>
       </div>
-      </Router>
+      </React.Fragment>
     )
   }
 }
