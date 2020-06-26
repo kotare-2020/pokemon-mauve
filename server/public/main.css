@@ -132,3 +132,8 @@ p {
 h1 {
     font-family: 'PokemonGb-RAeo'; 
 }
+
+a {
+    color: black;
+    text-decoration: none;
+}
