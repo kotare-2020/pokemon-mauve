@@ -14,12 +14,10 @@ class CombatSystem extends React.Component {
     won: true
   }
 
-
-
-
   componentDidMount = () => {
     console.log('CombatSystem did mount')
   }
+
   getRandomInt = (min, max) => {
     return Math.floor(Math.random() * (max - min + 1) + min)
   }
@@ -39,9 +37,6 @@ class CombatSystem extends React.Component {
     }
     )
   }
-  //o have a thing in state that remembers whos turn it is and whether they have made their turn. (already done, to a degree)
-  //o run getHitPoints in or after handleclick
-  //o can run function twice:
   
   aiAttack = (aiAttackPoints) => {
     console.log('aiAttack() start: isUserTurn =', this.state.isUserTurn)
@@ -120,7 +115,7 @@ export default CombatSystem
 // combat animations stretch:
 
 // in combat system component:
-// onclick, a function that was imported from App will be run so that a css animation will play in arena component.
+// onclick, a function that was imported from App (what?) will be run so that a css animation will play in arena component.
 
 
 // Completed stuff:
@@ -142,13 +137,20 @@ export default CombatSystem
   //o ai will attack after user has attacked
   //o AND after a short delay
 
-
 //o Is it users turn?
 
-//o check true or false
-//o if true, user can press attack
-//o user will press attack
-//o remove ai attack from button.attack...and so on
-//o set userTurn to false and start timer
-//o **(Timer is stretch)**
-//o after timer, user can attack again (ai attack can be made later)
+  //o check true or false
+  //o if true, user can press attack
+  //o user will press attack
+  //o remove ai attack from button.attack...and so on
+  //o set userTurn to false and start timer
+  //o **(Timer is stretch)**
+  //o after timer, user can attack again (ai attack can be made later)
+
+//o have a thing in state that remembers whos turn it is and whether they have made their turn. (already done, to a degree)
+  //o run getHitPoints in or after handleclick
+  //o can run function twice:
+
+    // nice work team!
+  //o get random enemy function
+  //o get ai data: name, user and ai sprites

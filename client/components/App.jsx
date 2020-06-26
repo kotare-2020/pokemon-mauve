@@ -26,10 +26,6 @@ class App extends React.Component {
     console.log(this.state);
   }
 
-  // nice work team!
-  //o get random enemy function
-  //o get ai data: name, user and ai sprites
-
   render() {
     return (
       <Router>
