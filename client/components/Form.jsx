@@ -65,7 +65,7 @@ render() {
     <Sound
                 url="/audio/Pokemon BlueRed - Pallet Town.mp3"
                 playStatus={Sound.status.PLAYING}
-                playFromPosition={300 /* in milliseconds */}
+                // playFromPosition={300 /* in milliseconds */}
                 onLoading={this.handleSongLoading}
                 onPlaying={this.handleSongPlaying}
                 onFinishedPlaying={this.handleSongFinishedPlaying}
