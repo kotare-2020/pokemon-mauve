@@ -132,3 +132,13 @@ p {
 h1 {
     font-family: 'PokemonGb-RAeo'; 
 }
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+#app {
+    width: 800px;
+    margin: 0 auto;
+}

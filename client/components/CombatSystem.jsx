@@ -56,7 +56,7 @@ class CombatSystem extends React.Component {
 
   handleClick = () => {
     this.subtractHP(this.generateAttack(), this.generateAttack())
-  }
+  }         
 
   isUnconscious = (userHP, aiHP) => {
     if ( userHP <= 0 || aiHP <= 0 ){
