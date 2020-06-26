@@ -5,6 +5,7 @@ body {
 
 .attackButton {
     padding: 25pt;
+    width: 75%;
     align-items: center;
     background-color: white;
     cursor:pointer;
@@ -13,14 +14,17 @@ body {
 
 .resultsButton {
     padding: 25pt;
+    margin-top: 25pt;
     align-items: center;
     background-color: white;
     cursor:pointer;
     font-family: 'PokemonGb-RAeo';
+    width: 100%;
 }
 
 .homeButton {
     padding: 25pt;
+    width: 25%;
     align-items: center;
     background-color: white;
     cursor:pointer;
@@ -29,6 +33,16 @@ body {
 
 .startBattle {
     padding: 25pt;
+    margin: 25pt;
+    align-items: center;
+    background-color: white;
+    cursor:pointer;
+    font-family: 'PokemonGb-RAeo';
+}
+
+.generateApponent {
+    padding: 25pt;
+    margin: 25pt;
     align-items: center;
     background-color: white;
     cursor:pointer;
@@ -40,6 +54,27 @@ body {
     align-items: center;
     background-color: white;
 } */
+
+.oak {
+    max-height: 300px;
+    padding-top: 25pt;
+}
+
+.form {
+    text-align: center;
+    border-style: double;
+}
+
+.trainerForm {
+    padding: 10pt;
+    margin: 20pt;
+    padding-right: 30pt;
+}
+
+.pokemonForm {
+    padding: 10pt;
+    margin: 20pt;
+}
 
 .text-box {
     border-style: double;

@@ -2,6 +2,7 @@ import React from 'react'
 import ResultButton from "./ResultsButton"
 import HomeButton from "./HomeButton"
 import { HashRouter as Router, Route } from 'react-router-dom'
+import { saveResult } from '../api/index'
 
 class CombatSystem extends React.Component {
 
@@ -9,7 +10,13 @@ class CombatSystem extends React.Component {
     userHP : 100,
     aiHP : 100,
     isUserTurn : true,
+    name: this.props.name,
+    won: true
   }
+
+
+
+
   componentDidMount = () => {
     console.log('CombatSystem did mount')
   }
@@ -66,6 +73,7 @@ class CombatSystem extends React.Component {
       return buttons.aiAttack
     }
     else if ( this.isUnconscious(userHP, aiHP) ) {
+      saveResult(this.state.name, this.state.won)
       return buttons.unconscious
     }
   }
@@ -90,8 +98,8 @@ class CombatSystem extends React.Component {
       <Router>
       <div className='text-box'>
       {button}
-      <ResultButton/>
       <HomeButton/>
+      <ResultButton/>
       </div>
       </Router>
     )
