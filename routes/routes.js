@@ -7,7 +7,7 @@ const db = require('../db/db')
 // Check database if that user exists - getUser, if undefined - addUser
 
 router.post('/', (req, res) => {
-    console.log('posting')
+    console.log('posting - in routes.js')
     const name = req.body.name
     console.log("name", name)
 
