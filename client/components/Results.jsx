@@ -3,10 +3,10 @@ import HomeButton from "./HomeButton"
 
 const Results = () => {
   return (
-    <>
-    <HomeButton />
-    <h1>This is the results (stretch)</h1>
-    </>
+    <React.Fragment>
+      <HomeButton />
+      <h1>This is the results (stretch)</h1>
+    </React.Fragment>
   )
 }
 

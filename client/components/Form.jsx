@@ -1,7 +1,10 @@
 import React from 'react'
 import Results from './Results'
 import StartBattle from "./StartBattle"
+import ResultButton from "./ResultsButton"
 import { HashRouter as Router, Route } from "react-router-dom";
+import {savePerson} from '../api/index'
+
 
 
 class Form extends React.Component {
@@ -19,7 +22,7 @@ componentDidMount() {
 
 handleSubmit = event => {
   event.preventDefault()
-
+  savePerson(this.state.name)
   this.props.setName(this.state.name, this.state.pokemonName, this.state.aiPokemon)
 }
 
@@ -36,6 +39,7 @@ handleChange = event => {
 render() {
   return (
     <Router>
+      <ResultButton/>
     <form onSubmit={this.handleSubmit}>
       <label>
         Trainer Name:

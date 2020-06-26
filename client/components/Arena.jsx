@@ -2,7 +2,9 @@ import React from 'react'
 import request from 'superagent'
 import HealthDisplay from './HealthDisplay'
 import CombatSystem from './CombatSystem'
+import ResultButton from "./ResultsButton"
 // import HomeButton from "./HomeButton"
+import { HashRouter as Router, Route } from 'react-router-dom'
 
 
 class Arena extends React.Component {
@@ -15,6 +17,9 @@ class Arena extends React.Component {
       userHP: 100,
       aiHP: 100
     },
+    userPokemonName: this.props.pokemonName,
+    // aiSprite: this.props.pokemonValues,
+    aiPokemonName: this.props.aiPokemon,
   }
 
   componentDidMount() {
@@ -30,7 +35,7 @@ class Arena extends React.Component {
 
   getMyPokemon = () => {
     // take input from form and put at end of URL
-    request.get('https://pokeapi.co/api/v2/pokemon/1/')
+    request.get(`https://pokeapi.co/api/v2/pokemon/${this.props.pokemonName}/`)
       .then(res => {
         this.setState({
           userSprite: res.body.sprites.back_default,
@@ -40,7 +45,7 @@ class Arena extends React.Component {
 
   getMyPokemonName = () => {
     // take input from form and put at end of URL
-    request.get('https://pokeapi.co/api/v2/pokemon/1/')
+    request.get(`https://pokeapi.co/api/v2/pokemon/${this.props.pokemonName}/`)
       .then(res => {
         this.setState({
           userPokemonName: res.body.name,
@@ -50,7 +55,7 @@ class Arena extends React.Component {
 
   getAiPokemon = () => {
     // randomPokemonFunction outputs number to end of URL
-    request.get('https://pokeapi.co/api/v2/pokemon/1/')
+    request.get(`https://pokeapi.co/api/v2/pokemon/${this.state.aiPokemonName}/`)
       .then(res => {
         this.setState({
           aiSprite: res.body.sprites.front_default
@@ -60,7 +65,7 @@ class Arena extends React.Component {
 
   getAiPokemonName = () => {
     // take input from form and put at end of URL
-    request.get('https://pokeapi.co/api/v2/pokemon/1/')
+    request.get(`https://pokeapi.co/api/v2/pokemon/${this.state.aiPokemonName}/`)
       .then(res => {
         this.setState({
           aiPokemonName: res.body.name,
@@ -84,22 +89,24 @@ class Arena extends React.Component {
 
   render() {
     return (
-      <>
+      <React.Fragment>
       <div>
-        <h1>This is the arena for fighting pokemon</h1>
-        <div className='userPokemon'>
-          <img className='userPokemonSprite' src={this.state.userSprite} alt="userSprite"/>
-          <p>{this.state.userPokemonName}</p>
-          <HealthDisplay healthPoints={this.state.hitpoints.userHP}/>
-        </div>
-        <div classname='aiPokemon'>
-          <img className='aiPokemonSprite' src={this.state.aiSprite} alt="aiSprite"/>
-          <p>{this.state.aiPokemonName}</p>
-          <HealthDisplay healthPoints={this.state.hitpoints.aiHP}/>
-        </div>
+        <h1>Arena</h1>
+        <div className='fightArena'>
+            <div className='aiPokemon'>
+              <p>{this.state.aiPokemonName}</p>
+              <HealthDisplay healthPoints={this.state.hitpoints.aiHP}/>
+              <img className='aiPokemonSprite' src={this.state.aiSprite} alt="aiSprite"/>
+            </div>
+            <div className='userPokemon'>
+              <img className='userPokemonSprite' src={this.state.userSprite} alt="userSprite"/>
+              <p>{this.state.userPokemonName}</p>
+              <HealthDisplay healthPoints={this.state.hitpoints.userHP}/>
+            </div>
+          </div>
       </div>
       <CombatSystem getHitPoints={this.getHitPoints} />
-      </>
+      </React.Fragment>
     )
   }
 }
