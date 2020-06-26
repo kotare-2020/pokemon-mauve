@@ -11,6 +11,7 @@ class Arena extends React.Component {
     userPokemonName: this.props.pokemonName,
     // aiSprite: this.props.pokemonValues,
     aiPokemonName: this.props.aiPokemon,
+    name: this.props.name
   }
 
   componentDidMount() {
@@ -19,6 +20,8 @@ class Arena extends React.Component {
     this.getAiPokemon()
     this.getAiPokemonName()
   }
+
+
 
   // handleClick = () => {
   //   this.getMyQuote()
