@@ -66,7 +66,7 @@ class Arena extends React.Component {
 
   render() {
     return (
-      <Router>
+      <React.Fragment>
       <div>
         <h1>Arena</h1>
         <div className='fightArena'>
@@ -80,7 +80,7 @@ class Arena extends React.Component {
             </div>
           </div>
       </div>
-      </Router>
+      </React.Fragment>
     )
   }
 }
