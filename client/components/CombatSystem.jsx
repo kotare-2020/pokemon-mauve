@@ -71,9 +71,9 @@ class CombatSystem extends React.Component {
     const aiHP = this.state.aiHP
     const isUserTurn = this.state.isUserTurn
     const buttons = {
-      attack: <button className='button' onClick={this.handleClick}>Attack!</button>,
-      unconscious: <button className='button'>They're unconscious!</button>,
-      aiAttack: <button className='button'>They're attacking!</button>,
+      attack: <button className='attackButton' onClick={this.handleClick}>Attack!</button>,
+      unconscious: <button className='attackButton'>They're unconscious!</button>,
+      aiAttack: <button className='attackButton'>They're attacking!</button>,
     }
     let button
 
@@ -85,9 +85,9 @@ class CombatSystem extends React.Component {
       <Router>
       <div className='text-box'>
       {button}
-      </div>
       <ResultButton/>
       <HomeButton/>
+      </div>
       </Router>
     )
   }

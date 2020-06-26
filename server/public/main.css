@@ -1,4 +1,33 @@
-.button {
+body {
+    font-family: 'PokemonGb-RAeo';  
+}
+
+
+.attackButton {
+    padding: 25pt;
+    align-items: center;
+    background-color: white;
+    cursor:pointer;
+    font-family: 'PokemonGb-RAeo';
+}
+
+.resultsButton {
+    padding: 25pt;
+    align-items: center;
+    background-color: white;
+    cursor:pointer;
+    font-family: 'PokemonGb-RAeo';
+}
+
+.homeButton {
+    padding: 25pt;
+    align-items: center;
+    background-color: white;
+    cursor:pointer;
+    font-family: 'PokemonGb-RAeo';
+}
+
+.startBattle {
     padding: 25pt;
     align-items: center;
     background-color: white;
@@ -34,6 +63,7 @@
 .userPokemon {
     order: 2;
     padding: 25pt;
+    margin-top: -200px;
     align-items: left;
     justify-content: flex-start;
 }
