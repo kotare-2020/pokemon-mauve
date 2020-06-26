@@ -4,6 +4,7 @@ import StartBattle from "./StartBattle"
 import ResultButton from "./ResultsButton"
 import { HashRouter as Router, Route } from "react-router-dom";
 import {savePerson} from '../api/index'
+import Sound from 'react-sound'
 
 
 
@@ -61,6 +62,14 @@ render() {
 
     </form>
     <ResultButton/>
+    <Sound
+                url="/audio/Pokemon BlueRed - Pallet Town.mp3"
+                playStatus={Sound.status.PLAYING}
+                playFromPosition={300 /* in milliseconds */}
+                onLoading={this.handleSongLoading}
+                onPlaying={this.handleSongPlaying}
+                onFinishedPlaying={this.handleSongFinishedPlaying}
+            />
     </Router>
   )
 }

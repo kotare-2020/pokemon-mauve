@@ -1,6 +1,7 @@
 import React from 'react'
 import request from 'superagent'
 import ResultButton from "./ResultsButton"
+import Sound from 'react-sound'
 // import HomeButton from "./HomeButton"
 import { HashRouter as Router, Route } from 'react-router-dom'
 
@@ -67,6 +68,14 @@ class Arena extends React.Component {
   render() {
     return (
       <React.Fragment>
+      <Sound
+                url="/audio/Pokemon Red, Yellow, Blue Battle Music- Trainer.mp3"
+                playStatus={Sound.status.PLAYING}
+                playFromPosition={300 /* in milliseconds */}
+                onLoading={this.handleSongLoading}
+                onPlaying={this.handleSongPlaying}
+                onFinishedPlaying={this.handleSongFinishedPlaying}
+            />
       <div>
         <h1>Arena</h1>
         <div className='fightArena'>
