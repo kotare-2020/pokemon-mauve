@@ -10,7 +10,7 @@
 
 - [Jayden Hall](https://github.com/JaydenHall)
 - [Nick Jarvie](https://github.com/nick-jarvie)
-- [Richard_Emanuel](https://github.com/richard-eman)
+- [Richard Emanuel](https://github.com/richard-eman)
 - [Rose Mead](https://github.com/rose-mead)
 
 
