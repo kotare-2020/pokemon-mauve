@@ -1,6 +1,5 @@
 import React from 'react'
-import Results from './Results'
-import StartBattle from "./StartBattle"
+import StartBattleButton from "./StartBattleButton"
 import ResultButton from "./ResultsButton"
 import { HashRouter as Router, Route } from "react-router-dom";
 import {savePerson} from '../api/index'
@@ -57,7 +56,7 @@ render() {
         </label>
       </div>
       <input className="generateApponent" type="submit" value="Generate apponent" />
-    <Route exact path="/" component={StartBattle} />
+    <Route exact path="/" component={StartBattleButton} />
     </div>
 
     </form>

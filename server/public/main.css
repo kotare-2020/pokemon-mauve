@@ -31,7 +31,7 @@ body {
     font-family: 'PokemonGb-RAeo';
 }
 
-.startBattle {
+.startBattleButton {
     padding: 25pt;
     margin: 25pt;
     align-items: center;

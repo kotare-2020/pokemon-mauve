@@ -3,9 +3,6 @@ import Form from "./Form";
 import Arena from "./Arena";
 import { HashRouter as Router, Route } from "react-router-dom";
 import Results from "./Results";
-import ResultsButton from "./ResultsButton"
-import HomeButton from "./HomeButton"
-import StartBattle from "./StartBattle"
 
 class App extends React.Component {
   state = {
