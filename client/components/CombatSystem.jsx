@@ -33,19 +33,32 @@ class CombatSystem extends React.Component {
     }, () => {
       console.log('attacked: isUserTurn =', this.state.isUserTurn)
       this.props.getHitPoints(this.state.userHP, this.state.aiHP)
-      window.setTimeout(() => {this.aiAttack(aiAttackPoints)}, 1000)
-    }
-    )
+      if ( this.isUnconscious(this.state.userHP, this.state.aiHP) == false ){
+        window.setTimeout(() => {this.aiAttack(aiAttackPoints)}, 1000)
+      }
+      else {
+        //battle end - player won
+        saveResult(this.state.name, this.state.won)
+      }
+    })
   }
   
   aiAttack = (aiAttackPoints) => {
     console.log('aiAttack() start: isUserTurn =', this.state.isUserTurn)
     this.setState({
       userHP: this.state.userHP -= aiAttackPoints,
-      isUserTurn: true
     }, () => {
-      console.log('aiAttack end', this.state.isUserTurn)
       this.props.getHitPoints(this.state.userHP, this.state.aiHP)
+      if ( this.isUnconscious(this.state.userHP, this.state.aiHP) == false ){
+        this.setState({
+          isUserTurn: true
+        })
+      }
+      else {
+        //battle end - ai won
+        saveResult(this.state.name, this.state.won)
+      }
+      console.log('aiAttack end', this.state.isUserTurn)
     })
   }
 
@@ -68,7 +81,6 @@ class CombatSystem extends React.Component {
       return buttons.aiAttack
     }
     else if ( this.isUnconscious(userHP, aiHP) ) {
-      saveResult(this.state.name, this.state.won)
       return buttons.unconscious
     }
   }
