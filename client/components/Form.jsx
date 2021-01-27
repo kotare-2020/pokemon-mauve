@@ -24,7 +24,7 @@ componentDidMount() {
 handleSubmit = event => {
   event.preventDefault()
   savePerson(this.state.name)
-  this.props.setName(this.state.name, this.state.pokemonName, this.state.aiPokemon)
+  this.props.setNamesAndOpponent(this.state.name, this.state.pokemonName, this.state.aiPokemon)
 }
 
 handleChange = event => {

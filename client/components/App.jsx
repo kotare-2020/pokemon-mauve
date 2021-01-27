@@ -14,7 +14,7 @@ class App extends React.Component {
     aiPokemon: "",
   };
 
-  setName = (name, pokemonName, aiPokemon) => {
+  setNamesAndOpponent = (name, pokemonName, aiPokemon) => {
     this.setState({
       name: name,
       pokemonName: pokemonName,
@@ -32,7 +32,7 @@ class App extends React.Component {
         {/* <Route path="/" component={ResultsButton} /> */}
         {/* <Route path="/" component={HomeButton} /> */}
        
-        <Route exact path="/" component={() => <Form setName={this.setName} />} />
+        <Route exact path="/" component={() => <Form setNamesAndOpponent={this.setNamesAndOpponent} />} />
         <Route exact path="/arena" component={() => <Arena pokemonName={this.state.pokemonName} aiPokemon={this.state.aiPokemon}  name={this.state.name}/> } />
         <Route exact path="/results" component={Results} />
       </Router>
