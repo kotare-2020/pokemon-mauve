@@ -33,7 +33,7 @@ class App extends React.Component {
         {/* <Route path="/" component={HomeButton} /> */}
        
         <Route exact path="/" component={() => <Form setName={this.setName} />} />
-        <Route exact path="/arena" component={() => <Arena pokemonName={this.state.pokemonName} aiPokemon={this.state.aiPokemon} /> } />
+        <Route exact path="/arena" component={() => <Arena pokemonName={this.state.pokemonName} aiPokemon={this.state.aiPokemon}  name={this.state.name}/> } />
         <Route exact path="/results" component={Results} />
       </Router>
     );

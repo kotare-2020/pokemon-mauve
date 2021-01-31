@@ -117,7 +117,7 @@ class Arena extends React.Component {
             </div>
           </div>
       </div>
-      <CombatSystem getHitPoints={this.getHitPoints} />
+      <CombatSystem getHitPoints={this.getHitPoints} name={this.props.name} />
       </React.Fragment>
     )
   }
